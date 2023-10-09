@@ -1,0 +1,38 @@
+/* Style pour chaque carte de prévision météorologique */
+.weather-forecast-item {
+    background-color: #ffffff; /* Couleur de fond blanche */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    max-width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    transition: transform 0.2s ease;
+}
+
+/* Style pour le titre de la carte (date) */
+.weather-forecast-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333; /* Couleur de texte sombre */
+}
+
+/* Style pour l'icône météo */
+.weather-forecast-item img {
+    max-width: 80px;
+    height: auto;
+}
+
+/* Style pour la description météo */
+.weather-forecast-item p:first-of-type {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #007bff; /* Couleur de texte bleue */
+}
+
+/* Style pour les autres informations (température, vitesse du vent) */
+.weather-forecast-item p {
+    font-size: 14px;
+    margin: 5px 0;
+}

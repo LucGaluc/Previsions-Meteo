@@ -1,0 +1,64 @@
+/* Style de base pour l'application météo */
+.weather-app {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Titre */
+h1 {
+    color: #333; /* Couleur de texte sombre */
+}
+
+/* Boutons */
+button {
+    background-color: #007bff; /* Bleu vif */
+    color: #fff; /* Texte blanc */
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Bleu plus foncé au survol */
+}
+
+/* Chargement en cours */
+.weather-app p {
+    font-size: 18px;
+}
+
+/* Carte de prévisions météorologiques */
+.weather-forecast {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Style pour chaque carte de prévision */
+.weather-forecast .weather-card {
+    background-color: #f5f5f5; /* Couleur de fond grise */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    max-width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Style pour le texte de la carte de prévision */
+.weather-forecast .weather-card p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Style pour l'icône météo */
+.weather-forecast .weather-card img {
+    max-width: 80px;
+    height: auto;
+}
