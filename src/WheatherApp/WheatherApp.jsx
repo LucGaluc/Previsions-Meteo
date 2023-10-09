@@ -82,7 +82,7 @@ const WeatherApp = () => {
     return (
         <div className="weather-app">
             <h1>Bulletin Météo</h1>
-            <h5>(avec Cannes par defaut)</h5>
+            {/* <h5 >(avec Cannes par defaut)</h5>*/}
             <div>
                 {/* activer la géolocalisation */}
                 <button onClick={() => setUseGeolocation(true)}>
