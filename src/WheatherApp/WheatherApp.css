@@ -5,15 +5,13 @@
     padding: 20px;
 }
 
-/* Titre */
 h1 {
-    color: #333; /* Couleur de texte sombre */
+    color: black;
 }
 
-/* Boutons */
 button {
-    background-color: #007bff; /* Bleu vif */
-    color: #fff; /* Texte blanc */
+    background-color: #007bff;
+    color: whitesmoke;
     border: none;
     padding: 10px 20px;
     margin: 5px;
@@ -24,7 +22,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3; /* Bleu plus foncé au survol */
+    background-color: #0056b3;
 }
 
 /* Chargement en cours */
@@ -41,14 +39,14 @@ button:hover {
 
 /* Style pour chaque carte de prévision */
 .weather-forecast .weather-card {
-    background-color: #f5f5f5; /* Couleur de fond grise */
+    background-color: #f5f5f5;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 10px;
     margin: 10px;
     max-width: 200px;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Style pour le texte de la carte de prévision */
