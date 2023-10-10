@@ -57,7 +57,6 @@ const WeatherApp = () => {
             const response = await fetch(apiUrl);
             // réponse en JSON parse et on attend qu'elle arrive
             const data = await response.json();
-
             // Mise à jour avec données météo
             setWeatherData(data.list);
             // chargement terminé
@@ -69,7 +68,6 @@ const WeatherApp = () => {
             );
         }
     };
-
     // UseEffect pour charger les données initiales en fonction géoloc
     useEffect(() => {
         if (useGeolocation) {
