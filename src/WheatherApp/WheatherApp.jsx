@@ -97,7 +97,15 @@ const WeatherApp = () => {
                 <button onClick={() => setUseGeolocation(true)}>
                     Utiliser la Géolocalisation
                 </button>
-                <button onClick={handleSearch}>Rechercher</button>
+                <div>
+                    <input
+                        placeholder="Entrez votre ville"
+                        value={city}
+                        onChange={(e) => setCity(e.target.value)}
+                    />
+
+                    <button onClick={handleSearch}>Rechercher</button>
+                </div>
             </div>
             {loading ? (
                 <p>Chargement en cours...</p>
