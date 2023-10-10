@@ -111,12 +111,11 @@ const WeatherApp = () => {
     return (
         <div className="weather-app">
             <h1>Bulletin Météo</h1>
-            <div>
+            <div className="envieTest">
                 <button onClick={() => setUseGeolocation(true)}>
                     Géolocalisation
                 </button>
                 <input
-                    id="date"
                     type="date"
                     placeholder="Date sélectionnée"
                     value={
@@ -128,6 +127,7 @@ const WeatherApp = () => {
                 />
                 <div>
                     <input
+                        type="recherche"
                         placeholder="Entrez votre ville"
                         value={city}
                         onChange={(e) => setCity(e.target.value)}
