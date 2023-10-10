@@ -17,10 +17,33 @@ const WeatherApp = () => {
     // stocker date sélectionnée dans le calendrier
     const [selectedDate, setSelectedDate] = useState("");
 
-    // Obtenir les données météo avec géoloc
+    // Obtenir les données météo avec géolocalisation
     const getWeatherDataByLocation = async () => {
         try {
-            // ...
+            // Vérifier si la géolocalisation prise en charge
+            if (navigator.geolocation) {
+                // Obtenir la position actuelle de l'utilisateur
+                navigator.geolocation.getCurrentPosition(async (position) => {
+                    // Construire l'URL de l'API latitude et de longitude
+                    const apiUrl = `${API_URL}?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${API_KEY}&units=metric`;
+
+                    // Effectuer une requête GET avec fetch
+                    const response = await fetch(apiUrl);
+
+                    // Attendre la réponse et convertir en JSON
+                    const data = await response.json();
+
+                    // MAJ données météo
+                    setWeatherData(data.list);
+
+                    // chargement comme terminé
+                    setLoading(false);
+                });
+            } else {
+                alert(
+                    "La géolocalisation n'est pas prise en charge par votre navigateur."
+                );
+            }
         } catch (error) {
             console.error(
                 "Erreur lors de la récupération des données météo : ",
@@ -32,22 +55,21 @@ const WeatherApp = () => {
     // Fonction pour obtenir les données météos en fonction de la ville
     const getWeatherData = async (city) => {
         try {
-            // Construire l'URL de l'API en utilisant la clé API et le nom de la ville
+            // Construire API avec nom de la ville
             const apiUrl = `${API_URL}?q=${city}&appid=${API_KEY}&units=metric`;
 
             // Faire une requête GET avec fetch
             const response = await fetch(apiUrl);
 
-            // Attendre la réponse et la convertir en JSON
+            // Attendre JSON
             const data = await response.json();
 
-            // Mise à jour des données météo
+            // MAJ meteo
             setWeatherData(data.list);
 
-            // Marquer le chargement comme terminé
+            // chargement comme terminé
             setLoading(false);
         } catch (error) {
-            // Gérer les erreurs en affichant un message d'erreur
             console.error(
                 "Erreur lors de la récupération des données météo : ",
                 error
@@ -91,25 +113,24 @@ const WeatherApp = () => {
             <h1>Bulletin Météo</h1>
             <div>
                 <button onClick={() => setUseGeolocation(true)}>
-                    Utiliser la Géolocalisation
+                    Géolocalisation
                 </button>
+                <input
+                    id="date"
+                    type="date"
+                    placeholder="Date sélectionnée"
+                    value={
+                        selectedDate
+                            ? selectedDate.toISOString().slice(0, 10)
+                            : ""
+                    }
+                    onChange={(e) => setSelectedDate(new Date(e.target.value))}
+                />
                 <div>
                     <input
                         placeholder="Entrez votre ville"
                         value={city}
                         onChange={(e) => setCity(e.target.value)}
-                    />
-                    <input
-                        type="date"
-                        placeholder="Date sélectionnée"
-                        value={
-                            selectedDate
-                                ? selectedDate.toISOString().slice(0, 10)
-                                : ""
-                        }
-                        onChange={(e) =>
-                            setSelectedDate(new Date(e.target.value))
-                        }
                     />
                     <button onClick={handleSearch}>Rechercher</button>
                 </div>
