@@ -98,6 +98,6 @@ input[type="recherche"] {
 
     .envieTest {
         margin-left: 0;
-        width: 100%; /* Pour occuper toute la largeur sur les écrans très petits */
+        width: 100%; /* toute la largeur sur les écrans très petits */
     }
 }
