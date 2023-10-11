@@ -83,9 +83,22 @@ input[type="recherche"] {
     width: 30%;
     margin-left: 35%;
 }
-@media (max-width: 1024) {
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 2em; /* Ajustement de la taille de police pour les écrans très petits */
+    }
+
+    input[type="text"] {
+        font-size: 0.8em; /* Ajustement de la taille de police pour les écrans très petits */
+    }
+
+    button {
+        font-size: 0.8em; /* Ajustement de la taille de police pour les écrans très petits */
+    }
+
     .envieTest {
-        border: solid 3px black;
-        border-radius: 5px;
+        margin-left: 0;
+        width: 100%; /* Pour occuper toute la largeur sur les écrans très petits */
     }
 }
